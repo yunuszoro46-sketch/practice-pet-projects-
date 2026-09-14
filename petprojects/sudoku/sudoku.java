@@ -21,7 +21,7 @@ public class Sudoku {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Mark original non-zero elements as fixed
+
         for (int r = 0; r < SIZE; r++) {
             for (int c = 0; c < SIZE; c++) {
                 if (board[r][c] != 0) {
@@ -43,29 +43,29 @@ public class Sudoku {
 
     
             if (isBoardFilled()) {
-                System.out.println("\n🎉 CONGRATULATIONS! You solved the Sudoku puzzle! 🎉");
+                System.out.println("\n CONGRATULATIONS! You solved the Sudoku puzzle! ");
                 break;
             }
 
             System.out.print("\nEnter move (Row Col Value): ");
             
             if (!scanner.hasNextInt()) {
-                System.out.println("⚠️ Invalid input! Please enter integers only.");
-                scanner.next(); // Clear bad input
+                System.out.println(" Invalid input! Please enter integers only.");
+                scanner.next(); 
                 continue;
             }
             int row = scanner.nextInt();
 
             if (!scanner.hasNextInt()) {
-                System.out.println("⚠️ Invalid input! Please enter integers only.");
-                scanner.next(); // Clear bad input
+                System.out.println("Invalid input! Please enter integers only.");
+                scanner.next(); 
                 continue;
             }
             int col = scanner.nextInt();
 
             if (!scanner.hasNextInt()) {
-                System.out.println("⚠️ Invalid input! Please enter integers only.");
-                scanner.next(); // Clear bad input
+                System.out.println(" Invalid input! Please enter integers only.");
+                scanner.next(); 
                 continue;
             }
             int num = scanner.nextInt();
@@ -132,7 +132,7 @@ public class Sudoku {
 
 
     private static boolean isValidMove(int row, int col, int num) {
-        // Check row
+
         for (int i = 0; i < SIZE; i++) {
             if (i != col && board[row][i] == num) {
                 return false;
